@@ -1,0 +1,2 @@
+net,lr,epochs
+resnet18,0.001,10

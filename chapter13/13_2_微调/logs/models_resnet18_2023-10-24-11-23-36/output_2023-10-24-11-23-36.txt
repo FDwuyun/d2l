@@ -1,0 +1,1 @@
+{'net': 'models_resnet18', 'weights': 'weights = models.ResNet18_Weights.IMAGENET1K_V1', 'num_gpus': 2, 'num_epochs': 10, 'batch_size': 128, 'lr': 0.001, 'weight_decay': 0.001, 'description': '微调，热狗识别'}

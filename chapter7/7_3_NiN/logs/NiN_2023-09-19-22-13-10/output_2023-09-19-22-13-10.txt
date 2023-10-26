@@ -1,0 +1,72 @@
+Sequential output shape:	 torch.Size([1, 96, 54, 54])
+MaxPool2d output shape:	 torch.Size([1, 96, 26, 26])
+Sequential output shape:	 torch.Size([1, 256, 26, 26])
+MaxPool2d output shape:	 torch.Size([1, 256, 12, 12])
+Sequential output shape:	 torch.Size([1, 384, 12, 12])
+MaxPool2d output shape:	 torch.Size([1, 384, 5, 5])
+Dropout output shape:	 torch.Size([1, 384, 5, 5])
+Sequential output shape:	 torch.Size([1, 10, 5, 5])
+AdaptiveAvgPool2d output shape:	 torch.Size([1, 10, 1, 1])
+Flatten output shape:	 torch.Size([1, 10])
+==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+Sequential                               [1, 10]                   --
+├─Sequential: 1-1                        [1, 96, 54, 54]           --
+│    └─Conv2d: 2-1                       [1, 96, 54, 54]           11,712
+│    └─ReLU: 2-2                         [1, 96, 54, 54]           --
+│    └─Conv2d: 2-3                       [1, 96, 54, 54]           9,312
+│    └─ReLU: 2-4                         [1, 96, 54, 54]           --
+│    └─Conv2d: 2-5                       [1, 96, 54, 54]           9,312
+│    └─ReLU: 2-6                         [1, 96, 54, 54]           --
+├─MaxPool2d: 1-2                         [1, 96, 26, 26]           --
+├─Sequential: 1-3                        [1, 256, 26, 26]          --
+│    └─Conv2d: 2-7                       [1, 256, 26, 26]          614,656
+│    └─ReLU: 2-8                         [1, 256, 26, 26]          --
+│    └─Conv2d: 2-9                       [1, 256, 26, 26]          65,792
+│    └─ReLU: 2-10                        [1, 256, 26, 26]          --
+│    └─Conv2d: 2-11                      [1, 256, 26, 26]          65,792
+│    └─ReLU: 2-12                        [1, 256, 26, 26]          --
+├─MaxPool2d: 1-4                         [1, 256, 12, 12]          --
+├─Sequential: 1-5                        [1, 384, 12, 12]          --
+│    └─Conv2d: 2-13                      [1, 384, 12, 12]          885,120
+│    └─ReLU: 2-14                        [1, 384, 12, 12]          --
+│    └─Conv2d: 2-15                      [1, 384, 12, 12]          147,840
+│    └─ReLU: 2-16                        [1, 384, 12, 12]          --
+│    └─Conv2d: 2-17                      [1, 384, 12, 12]          147,840
+│    └─ReLU: 2-18                        [1, 384, 12, 12]          --
+├─MaxPool2d: 1-6                         [1, 384, 5, 5]            --
+├─Dropout: 1-7                           [1, 384, 5, 5]            --
+├─Sequential: 1-8                        [1, 10, 5, 5]             --
+│    └─Conv2d: 2-19                      [1, 10, 5, 5]             34,570
+│    └─ReLU: 2-20                        [1, 10, 5, 5]             --
+│    └─Conv2d: 2-21                      [1, 10, 5, 5]             110
+│    └─ReLU: 2-22                        [1, 10, 5, 5]             --
+│    └─Conv2d: 2-23                      [1, 10, 5, 5]             110
+│    └─ReLU: 2-24                        [1, 10, 5, 5]             --
+├─AdaptiveAvgPool2d: 1-9                 [1, 10, 1, 1]             --
+├─Flatten: 1-10                          [1, 10]                   --
+==========================================================================================
+Total params: 1,992,166
+Trainable params: 1,992,166
+Non-trainable params: 0
+Total mult-adds (M): 763.82
+==========================================================================================
+Input size (MB): 0.20
+Forward/backward pass size (MB): 12.20
+Params size (MB): 7.97
+Estimated Total Size (MB): 20.37
+==========================================================================================
+training on cuda:2
+20.8 sec, [epoch: 0] train_loss: 2.284, train_acc: 0.121, test_acc: 0.239
+41.5 sec, [epoch: 1] train_loss: 2.037, train_acc: 0.234, test_acc: 0.256
+62.2 sec, [epoch: 2] train_loss: 1.418, train_acc: 0.425, test_acc: 0.483
+82.9 sec, [epoch: 3] train_loss: 1.213, train_acc: 0.500, test_acc: 0.511
+103.4 sec, [epoch: 4] train_loss: 1.142, train_acc: 0.533, test_acc: 0.524
+123.9 sec, [epoch: 5] train_loss: 1.080, train_acc: 0.555, test_acc: 0.551
+144.3 sec, [epoch: 6] train_loss: 1.052, train_acc: 0.566, test_acc: 0.571
+164.8 sec, [epoch: 7] train_loss: 1.029, train_acc: 0.573, test_acc: 0.571
+185.2 sec, [epoch: 8] train_loss: 1.007, train_acc: 0.584, test_acc: 0.586
+205.7 sec, [epoch: 9] train_loss: 0.994, train_acc: 0.588, test_acc: 0.593
+[Total] loss 0.994, train acc 0.588,test acc 0.593
+[Total] 205.7 sec, 2917.2 examples/secon cuda:2

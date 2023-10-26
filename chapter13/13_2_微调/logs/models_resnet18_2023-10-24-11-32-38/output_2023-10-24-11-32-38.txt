@@ -1,0 +1,8 @@
+{'net': 'models_resnet18', 'weights': 'weights = models.ResNet18_Weights.IMAGENET1K_V1', 'num_gpus': 2, 'num_epochs': 10, 'batch_size': 128, 'lr': 0.001, 'weight_decay': 0.001, 'description': '微调，热狗识别'}
+[2023-10-24-11-32-38] training on  [device(type='cuda', index=0), device(type='cuda', index=1)]
+[2023-10-24-11-32-40] Each epoch includes 16 batches
+tensor(24805.8945, device='cuda:0', grad_fn=<NllLossBackward0>) 65.0 128 19267584 <__main__.Accumulator object at 0x7f980c6082b0>
+tensor(3329.4849, device='cuda:0', grad_fn=<NllLossBackward0>) 60.0 128 19267584 <__main__.Accumulator object at 0x7f980c6082b0>
+tensor(1541.7404, device='cuda:0', grad_fn=<NllLossBackward0>) 61.0 128 19267584 <__main__.Accumulator object at 0x7f980c6082b0>
+tensor(1367.5356, device='cuda:0', grad_fn=<NllLossBackward0>) 61.0 128 19267584 <__main__.Accumulator object at 0x7f980c6082b0>
+tensor(863.9077, device='cuda:0', grad_fn=<NllLossBackward0>) 64.0 128 19267584 <__main__.Accumulator object at 0x7f980c6082b0>

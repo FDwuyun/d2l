@@ -1,0 +1,15 @@
+Files already downloaded and verified
+Files already downloaded and verified
+[2023-10-23-21-14-03] training on  [device(type='cuda', index=0), device(type='cuda', index=1)]
+[2023-10-23-21-14-16][epoch: 1, 10.569 sec] train_loss 1.514, train_acc 0.000, valid acc 0.522
+[2023-10-23-21-14-24][epoch: 2, 18.828 sec] train_loss 1.072, train_acc 0.000, valid acc 0.584
+[2023-10-23-21-14-33][epoch: 3, 27.157 sec] train_loss 0.915, train_acc 0.000, valid acc 0.509
+[2023-10-23-21-14-41][epoch: 4, 35.440 sec] train_loss 0.795, train_acc 0.000, valid acc 0.601
+[2023-10-23-21-14-49][epoch: 5, 43.746 sec] train_loss 0.720, train_acc 0.000, valid acc 0.663
+[2023-10-23-21-14-58][epoch: 6, 52.059 sec] train_loss 0.653, train_acc 0.000, valid acc 0.631
+[2023-10-23-21-15-06][epoch: 7, 60.470 sec] train_loss 0.604, train_acc 0.000, valid acc 0.680
+[2023-10-23-21-15-14][epoch: 8, 68.747 sec] train_loss 0.555, train_acc 0.000, valid acc 0.685
+[2023-10-23-21-15-23][epoch: 9, 77.172 sec] train_loss 0.512, train_acc 0.000, valid acc 0.718
+[2023-10-23-21-15-31][epoch: 10, 85.641 sec] train_loss 0.466, train_acc 0.000, valid acc 0.685
+[Total 10 epochs, 87.755 sec] train_loss 0.466, train_acc 0.000, valid_acc0.685
+5838.3 examples/sec on [device(type='cuda', index=0), device(type='cuda', index=1)]

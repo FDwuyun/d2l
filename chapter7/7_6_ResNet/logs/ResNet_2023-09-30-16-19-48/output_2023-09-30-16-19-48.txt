@@ -1,0 +1,94 @@
+==========================================================================================
+Layer (type:depth-idx)                   Output Shape              Param #
+==========================================================================================
+Sequential                               [10, 10]                  --
+├─Sequential: 1-1                        [10, 64, 24, 24]          --
+│    └─Conv2d: 2-1                       [10, 64, 48, 48]          3,200
+│    └─BatchNorm2d: 2-2                  [10, 64, 48, 48]          128
+│    └─ReLU: 2-3                         [10, 64, 48, 48]          --
+│    └─MaxPool2d: 2-4                    [10, 64, 24, 24]          --
+├─Sequential: 1-2                        [10, 64, 24, 24]          --
+│    └─Residual: 2-5                     [10, 64, 24, 24]          --
+│    │    └─Conv2d: 3-1                  [10, 64, 24, 24]          36,928
+│    │    └─BatchNorm2d: 3-2             [10, 64, 24, 24]          128
+│    │    └─Conv2d: 3-3                  [10, 64, 24, 24]          36,928
+│    │    └─BatchNorm2d: 3-4             [10, 64, 24, 24]          128
+│    └─Residual: 2-6                     [10, 64, 24, 24]          --
+│    │    └─Conv2d: 3-5                  [10, 64, 24, 24]          36,928
+│    │    └─BatchNorm2d: 3-6             [10, 64, 24, 24]          128
+│    │    └─Conv2d: 3-7                  [10, 64, 24, 24]          36,928
+│    │    └─BatchNorm2d: 3-8             [10, 64, 24, 24]          128
+├─Sequential: 1-3                        [10, 128, 12, 12]         --
+│    └─Residual: 2-7                     [10, 128, 12, 12]         --
+│    │    └─Conv2d: 3-9                  [10, 128, 12, 12]         73,856
+│    │    └─BatchNorm2d: 3-10            [10, 128, 12, 12]         256
+│    │    └─Conv2d: 3-11                 [10, 128, 12, 12]         147,584
+│    │    └─BatchNorm2d: 3-12            [10, 128, 12, 12]         256
+│    │    └─Conv2d: 3-13                 [10, 128, 12, 12]         8,320
+│    └─Residual: 2-8                     [10, 128, 12, 12]         --
+│    │    └─Conv2d: 3-14                 [10, 128, 12, 12]         147,584
+│    │    └─BatchNorm2d: 3-15            [10, 128, 12, 12]         256
+│    │    └─Conv2d: 3-16                 [10, 128, 12, 12]         147,584
+│    │    └─BatchNorm2d: 3-17            [10, 128, 12, 12]         256
+├─Sequential: 1-4                        [10, 256, 6, 6]           --
+│    └─Residual: 2-9                     [10, 256, 6, 6]           --
+│    │    └─Conv2d: 3-18                 [10, 256, 6, 6]           295,168
+│    │    └─BatchNorm2d: 3-19            [10, 256, 6, 6]           512
+│    │    └─Conv2d: 3-20                 [10, 256, 6, 6]           590,080
+│    │    └─BatchNorm2d: 3-21            [10, 256, 6, 6]           512
+│    │    └─Conv2d: 3-22                 [10, 256, 6, 6]           33,024
+│    └─Residual: 2-10                    [10, 256, 6, 6]           --
+│    │    └─Conv2d: 3-23                 [10, 256, 6, 6]           590,080
+│    │    └─BatchNorm2d: 3-24            [10, 256, 6, 6]           512
+│    │    └─Conv2d: 3-25                 [10, 256, 6, 6]           590,080
+│    │    └─BatchNorm2d: 3-26            [10, 256, 6, 6]           512
+├─Sequential: 1-5                        [10, 512, 3, 3]           --
+│    └─Residual: 2-11                    [10, 512, 3, 3]           --
+│    │    └─Conv2d: 3-27                 [10, 512, 3, 3]           1,180,160
+│    │    └─BatchNorm2d: 3-28            [10, 512, 3, 3]           1,024
+│    │    └─Conv2d: 3-29                 [10, 512, 3, 3]           2,359,808
+│    │    └─BatchNorm2d: 3-30            [10, 512, 3, 3]           1,024
+│    │    └─Conv2d: 3-31                 [10, 512, 3, 3]           131,584
+│    └─Residual: 2-12                    [10, 512, 3, 3]           --
+│    │    └─Conv2d: 3-32                 [10, 512, 3, 3]           2,359,808
+│    │    └─BatchNorm2d: 3-33            [10, 512, 3, 3]           1,024
+│    │    └─Conv2d: 3-34                 [10, 512, 3, 3]           2,359,808
+│    │    └─BatchNorm2d: 3-35            [10, 512, 3, 3]           1,024
+├─AdaptiveAvgPool2d: 1-6                 [10, 512, 1, 1]           --
+├─Flatten: 1-7                           [10, 512]                 --
+├─Linear: 1-8                            [10, 10]                  5,130
+==========================================================================================
+Total params: 11,178,378
+Trainable params: 11,178,378
+Non-trainable params: 0
+Total mult-adds (G): 3.19
+==========================================================================================
+Input size (MB): 0.37
+Forward/backward pass size (MB): 70.41
+Params size (MB): 44.71
+Estimated Total Size (MB): 115.49
+==========================================================================================
+Sequential output shape:	 torch.Size([10, 64, 24, 24])
+Sequential output shape:	 torch.Size([10, 64, 24, 24])
+Sequential output shape:	 torch.Size([10, 128, 12, 12])
+Sequential output shape:	 torch.Size([10, 256, 6, 6])
+Sequential output shape:	 torch.Size([10, 512, 3, 3])
+AdaptiveAvgPool2d output shape:	 torch.Size([10, 512, 1, 1])
+Flatten output shape:	 torch.Size([10, 512])
+Linear output shape:	 torch.Size([10, 10])
+
+learning_rate = 0.05, num_epochs = 10, batch_size = 256
+
+training on cuda:0
+14.0 sec, [epoch: 0] train_loss: 0.499, train_acc: 0.827, test_acc: 0.855
+27.8 sec, [epoch: 1] train_loss: 0.252, train_acc: 0.907, test_acc: 0.880
+41.7 sec, [epoch: 2] train_loss: 0.194, train_acc: 0.929, test_acc: 0.893
+55.5 sec, [epoch: 3] train_loss: 0.150, train_acc: 0.946, test_acc: 0.875
+69.2 sec, [epoch: 4] train_loss: 0.113, train_acc: 0.959, test_acc: 0.901
+83.1 sec, [epoch: 5] train_loss: 0.082, train_acc: 0.971, test_acc: 0.896
+96.9 sec, [epoch: 6] train_loss: 0.058, train_acc: 0.981, test_acc: 0.904
+110.7 sec, [epoch: 7] train_loss: 0.039, train_acc: 0.987, test_acc: 0.910
+124.5 sec, [epoch: 8] train_loss: 0.026, train_acc: 0.992, test_acc: 0.915
+138.3 sec, [epoch: 9] train_loss: 0.013, train_acc: 0.997, test_acc: 0.910
+[Total] loss 0.013, train acc 0.997,test acc 0.910
+[Total] 138.3 sec, 4337.7 examples/secon cuda:0

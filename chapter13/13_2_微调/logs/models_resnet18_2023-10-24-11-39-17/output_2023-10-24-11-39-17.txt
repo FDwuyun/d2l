@@ -1,0 +1,15 @@
+{'net': 'models_resnet18', 'weights': 'weights = models.ResNet18_Weights.IMAGENET1K_V1', 'num_gpus': 3, 'num_epochs': 10, 'batch_size': 128, 'lr': 5e-05, 'weight_decay': 0.001, 'description': '微调，热狗识别'}
+[2023-10-24-11-39-17] training on  [device(type='cuda', index=0), device(type='cuda', index=1), device(type='cuda', index=2)]
+[2023-10-24-11-39-20] Each epoch includes 16 batches
+[2023-10-24-11-39-36][epoch: 1] 16.879 sec train_loss 2.464, train_acc 0.694, valid_acc 0.919
+[2023-10-24-11-39-48][epoch: 2] 28.731 sec train_loss 0.290, train_acc 0.908, valid_acc 0.916
+[2023-10-24-11-40-00][epoch: 3] 40.629 sec train_loss 0.342, train_acc 0.890, valid_acc 0.930
+[2023-10-24-11-40-12][epoch: 4] 52.515 sec train_loss 0.216, train_acc 0.923, valid_acc 0.929
+[2023-10-24-11-40-24][epoch: 5] 64.656 sec train_loss 0.168, train_acc 0.932, valid_acc 0.932
+[2023-10-24-11-40-36][epoch: 6] 76.893 sec train_loss 0.170, train_acc 0.934, valid_acc 0.924
+[2023-10-24-11-40-48][epoch: 7] 88.698 sec train_loss 0.186, train_acc 0.928, valid_acc 0.939
+[2023-10-24-11-41-00][epoch: 8] 100.556 sec train_loss 0.174, train_acc 0.932, valid_acc 0.939
+[2023-10-24-11-41-12][epoch: 9] 112.403 sec train_loss 0.206, train_acc 0.920, valid_acc 0.902
+[2023-10-24-11-41-24][epoch: 10] 124.215 sec train_loss 0.166, train_acc 0.938, valid_acc 0.931
+[Total 10 epochs] 126.507 sec train_loss 0.166, train_acc 0.000, valid_acc0.931
+161.0 examples/sec on [device(type='cuda', index=0), device(type='cuda', index=1), device(type='cuda', index=2)]
