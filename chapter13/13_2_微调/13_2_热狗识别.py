@@ -302,6 +302,7 @@ def save_model_param(model, save_path):
 def load_model_param(model, save_path):
     model.load_state_dict(torch.load(save_path))
     print(f"模型参数加载完毕 in {save_path}")
+
 def try_gpu(i=0):
     """如果存在，则返回gpu(i)，否则返回cpu()"""
     if i + 1 <= torch.cuda.device_count():

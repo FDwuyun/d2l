@@ -323,7 +323,7 @@ def multibox_detection(cls_probs, offset_preds, anchors, nms_threshold=0.5,
             dim=1
         )
         out.append(pred_info)
-        return torch.stack(out)
+    return torch.stack(out)
     
 anchors = torch.tensor(
     [
