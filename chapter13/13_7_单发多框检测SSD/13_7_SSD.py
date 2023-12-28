@@ -144,6 +144,11 @@ num_anchors = len(sizes[0]) + len(ratios[0]) - 1
 
 batch_size = 32
 # train_iter, _ = d2l.load_data_bananas(batch_size)
+# for X, Y in train_iter:
+#     print(X.shape)
+#     print(Y.shape)
+#     break
+# exit(0)
 
 device, net = d2l.try_gpu(), TinySSD(num_classes=1)
 trainer = torch.optim.SGD(net.parameters(), lr=0.2, weight_decay=5e-4)
@@ -187,7 +192,7 @@ net = net.to(device)
 # 预测目标
 
 d2l.load_model_param(net, f"{d2l.script_dir}" + "/SSD_params.pth")
-X = torchvision.io.read_image(f"{d2l.script_dir}" + '/../img/banana.jpg').unsqueeze(0).float()
+X = torchvision.io.read_image(f"{d2l.script_dir}" + '/../img/3.jpg').unsqueeze(0).float()
 # print(X.shape)
 img = X.squeeze(0).permute(1, 2, 0).long()
 # print(img.shape)
@@ -195,7 +200,7 @@ img = X.squeeze(0).permute(1, 2, 0).long()
 def predict(X):
     net.eval()
     anchors, cls_preds, bbox_preds = net(X.to(device))
-    print(anchors.shape)
+    # print(anchors.shape)
     cls_probs = F.softmax(cls_preds, dim=2).permute(0, 2, 1)
     output = d2l.multibox_detection(cls_probs, bbox_preds, anchors)
     idx = [i for i, row in enumerate(output[0]) if row[0] != -1]
@@ -215,5 +220,5 @@ def display(img, output, threshold):
         bbox = [row[2:6] * torch.tensor((w, h, w, h), device=row.device)]
         d2l.show_bboxes(fig.axes, bbox, '%.2f' % score, 'w')
 
-display(img, output.cpu(), threshold=0.99)
+display(img, output.cpu(), threshold=0.9)
 d2l.plt.savefig(f"{d2l.script_dir}" + "/banana_predict.png")

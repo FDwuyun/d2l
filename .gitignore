@@ -2,3 +2,5 @@
 /data
 /.git
 /chapter7/7_8_classify_leaf/logs
+/chapter13/13_11_全卷积网络/logs
+/chapter13/13_11_全卷积网络/*.pth
